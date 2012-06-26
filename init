@@ -2,9 +2,9 @@
 
 DIR=$(cd $(dirname $0);pwd)
 
-for i in .screenrc .bash_profile .bashrc
+for i in .screenrc .bash_profile .bashrc .vim .vimrc .gitconfig .git-completion.bash
 do
-  if [ ! -f "$HOME/$i" ];then
+  if [ ! -f "$HOME/$i" -a ! -d "$HOME/$i" ];then
     ln -s "$DIR/$i" "$HOME"
   fi
 done
