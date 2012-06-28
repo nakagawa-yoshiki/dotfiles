@@ -2,8 +2,10 @@ set nocompatible
 
 syntax on
 set number
-set tabstop=2
 set expandtab
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set autoindent
 set ignorecase
 set hlsearch
@@ -14,14 +16,18 @@ filetype off
 set rtp+=~/.vim/vundle/
 call vundle#rc()
 Bundle 'thinca/vim-quickrun'
-Bundle 'Shougo/vimproc'
 Bundle 'scrooloose/syntastic'
+Bundle 'Shougo/vimshell'
+Bundle 'Shougo/vimproc'
+Bundle 'Shougo/neocomplcache'
+Bundle 'mattn/zencoding-vim'
 Bundle 'gtags.vim'
 filetype plugin indent on
 
+autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
 
 "quickrun
-let g:quickrun_config={'*': {'split': 'vsplit'}}
+let g:quickrun_config={'_': {'split': 'vsplit', 'hook/time/enable': '1'}}
 set splitbelow
 set splitright
 
@@ -32,6 +38,8 @@ map <C-n> :cn<CR>
 map <C-p> :cp<CR>
 map <C-k> <C-o>
 
+"neocomplcache
+let g:neocomplcache_enable_at_startup = 1
 function InsertTabWrapper()
     if pumvisible()
         return "\<c-n>"
