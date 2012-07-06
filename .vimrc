@@ -1,15 +1,20 @@
 set nocompatible
 
 syntax on
+
 set number
 set expandtab
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set autoindent
+set cursorline
+
 set ignorecase
 set hlsearch
-set cursorline
+set smartcase
+
+"set mouse=a
 
 " Vundle
 filetype off
