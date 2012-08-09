@@ -14,6 +14,8 @@ set ignorecase
 set hlsearch
 set smartcase
 
+au BufNewFile,BufRead *.ejs setf html
+
 "set mouse=a
 
 " Vundle
@@ -27,9 +29,13 @@ Bundle 'Shougo/vimproc'
 Bundle 'Shougo/neocomplcache'
 Bundle 'mattn/zencoding-vim'
 Bundle 'gtags.vim'
+Bundle "matchit.zip"
 filetype plugin indent on
 
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
+
+"syntastic
+let g:syntastic_javascript_gjslint_conf = "--strict --nojsdoc"
 
 "quickrun
 let g:quickrun_config={'_': {'split': 'vsplit', 'hook/time/enable': '1'}}
