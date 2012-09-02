@@ -30,6 +30,7 @@ Bundle 'Shougo/neocomplcache'
 Bundle 'mattn/zencoding-vim'
 Bundle 'gtags.vim'
 Bundle "matchit.zip"
+Bundle "vim-scripts/JavaScript-Indent"
 filetype plugin indent on
 
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
