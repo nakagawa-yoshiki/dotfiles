@@ -35,6 +35,14 @@ filetype plugin indent on
 
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
 
+if filereadable(expand('~/.vimrc_private'))
+  source ~/.vimrc_private
+endif
+
+if filereadable('.vimrc.local')
+  source .vimrc.local
+endif
+
 "syntastic
 let g:syntastic_javascript_gjslint_conf = "--strict --nojsdoc"
 
