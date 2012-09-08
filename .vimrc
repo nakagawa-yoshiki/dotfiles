@@ -60,6 +60,9 @@ map <C-k> <C-o>
 
 "neocomplcache
 let g:neocomplcache_enable_at_startup = 1
+inoremap <expr><Up> pumvisible() ? neocomplcache#close_popup()."\<Up>" : "\<Up>"
+inoremap <expr><Down> pumvisible() ? neocomplcache#close_popup()."\<Down>" : "\<Down>"
+
 function InsertTabWrapper()
     if pumvisible()
         return "\<c-n>"
