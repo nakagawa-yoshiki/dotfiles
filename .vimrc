@@ -13,6 +13,7 @@ set cursorline
 set ignorecase
 set hlsearch
 set smartcase
+set fileformats="unix,dos,mac"
 
 au BufNewFile,BufRead *.ejs setf html
 
