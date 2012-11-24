@@ -32,6 +32,7 @@ Bundle 'mattn/zencoding-vim'
 Bundle 'gtags.vim'
 Bundle "matchit.zip"
 Bundle "vim-scripts/JavaScript-Indent"
+Bundle "kchmck/vim-coffee-script"
 filetype plugin indent on
 
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
@@ -49,6 +50,8 @@ let g:syntastic_javascript_gjslint_conf="--strict --nojsdoc --custom_jsdoc_tags=
 
 "quickrun
 let g:quickrun_config={'_': {'split': 'vsplit', 'hook/time/enable': '1'}}
+let g:quickrun_config['coffee'] = {'command' : 'coffee', 'exec' : ['%c -cbp %s']}
+
 set splitbelow
 set splitright
 
