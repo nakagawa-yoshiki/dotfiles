@@ -33,6 +33,7 @@ Bundle 'gtags.vim'
 Bundle "matchit.zip"
 Bundle "vim-scripts/JavaScript-Indent"
 Bundle "kchmck/vim-coffee-script"
+Bundle 'lukaszb/vim-web-indent'
 filetype plugin indent on
 
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
@@ -46,7 +47,7 @@ if filereadable('.vimrc.local')
 endif
 
 "syntastic
-let g:syntastic_javascript_gjslint_conf="--strict --nojsdoc --custom_jsdoc_tags='method,module,submodule,static,async,property'"
+let g:syntastic_javascript_gjslint_conf="--strict --nojsdoc --custom_jsdoc_tags='method,module,submodule,static,async,property,event'"
 
 "quickrun
 let g:quickrun_config={'_': {'split': 'vsplit', 'hook/time/enable': '1'}}
