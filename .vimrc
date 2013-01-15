@@ -47,6 +47,8 @@ if filereadable('.vimrc.local')
 endif
 
 "syntastic
+let g:syntastic_javascript_checker = 'gjslint'
+"let g:syntastic_javascript_checker = 'jshint'
 let g:syntastic_javascript_gjslint_conf="--strict --nojsdoc --custom_jsdoc_tags='method,module,submodule,static,async,property,event'"
 
 "quickrun
