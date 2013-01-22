@@ -34,6 +34,8 @@ Bundle "matchit.zip"
 Bundle "vim-scripts/JavaScript-Indent"
 Bundle "kchmck/vim-coffee-script"
 Bundle 'lukaszb/vim-web-indent'
+Bundle 'majutsushi/tagbar'
+
 filetype plugin indent on
 
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
