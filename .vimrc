@@ -60,6 +60,8 @@ let g:quickrun_config['coffee'] = {'command' : 'coffee', 'exec' : ['%c -cbp %s']
 set splitbelow
 set splitright
 
+map <C-w>] :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+
 "Gtags
 map <C-j> :GtagsCursor<CR>
 map <C-i> :Gtags -f %<CR>
