@@ -1,0 +1,26 @@
+{
+    "predef": [
+        "$"
+    ],
+
+    "quotmark": true,
+    "unused": true,
+    "undef": true,
+    "noempty": true,
+    "trailing": true,
+    "noarg": true,
+
+    "indent": 2,
+    "maxlen": 80,
+    "maxparams": 3,
+    "maxdepth": 3,
+    "maxstatements": 20,
+    "maxcomplexity": 10,
+
+    "white": false,
+    "node" : true,
+    "es5" : true,
+    "browser" : true,
+    "strict": false,
+    "devel": true
+}
