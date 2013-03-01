@@ -31,7 +31,8 @@ Bundle 'Shougo/neocomplcache'
 Bundle 'mattn/zencoding-vim'
 Bundle 'gtags.vim'
 Bundle "matchit.zip"
-Bundle "vim-scripts/JavaScript-Indent"
+"Bundle "vim-scripts/JavaScript-Indent"
+Bundle "pangloss/vim-javascript"
 Bundle "kchmck/vim-coffee-script"
 Bundle 'lukaszb/vim-web-indent'
 Bundle 'majutsushi/tagbar'
