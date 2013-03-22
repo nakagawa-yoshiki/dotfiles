@@ -1,6 +1,12 @@
 {
     "predef": [
-        "$"
+        "$",
+        "jasmine",
+        "describe",
+        "it",
+        "expect",
+        "runs",
+        "waitsFor"
     ],
 
     "quotmark": true,
