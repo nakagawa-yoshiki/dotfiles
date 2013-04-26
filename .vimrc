@@ -50,9 +50,8 @@ if filereadable('.vimrc.local')
 endif
 
 "syntastic
-let g:syntastic_javascript_checker = 'jshint'
-"let g:syntastic_javascript_checker = 'gjslint'
-let g:syntastic_javascript_gjslint_conf="--strict --nojsdoc --custom_jsdoc_tags='method,module,submodule,static,async,property,event'"
+let g:syntastic_javascript_checkers=['jshint', 'gjslint']
+let g:syntastic_javascript_gjslint_conf="--strict --nojsdoc --custom_jsdoc_tags='name,namespace,method,module,submodule,static,async,property,event'"
 
 "quickrun
 let g:quickrun_config={'_': {'split': 'vsplit', 'hook/time/enable': '1'}}
