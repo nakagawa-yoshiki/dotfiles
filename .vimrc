@@ -4,9 +4,9 @@ syntax on
 
 set number
 set expandtab
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 set autoindent
 set cursorline
 
@@ -17,25 +17,19 @@ set fileformats="unix,dos,mac"
 
 au BufNewFile,BufRead *.ejs setf html
 
-"set mouse=a
 
-" Vundle
+"Vundle
 filetype off
 set rtp+=~/.vim/vundle/
 call vundle#rc()
+
+Bundle 'embear/vim-localvimrc'
 Bundle 'thinca/vim-quickrun'
 Bundle 'scrooloose/syntastic'
-Bundle 'Shougo/vimshell'
 Bundle 'Shougo/vimproc'
 Bundle 'Shougo/neocomplcache'
 Bundle 'mattn/zencoding-vim'
-Bundle 'gtags.vim'
-Bundle "matchit.zip"
-Bundle "vim-scripts/JavaScript-Indent"
-"Bundle "pangloss/vim-javascript"
-Bundle "kchmck/vim-coffee-script"
-Bundle 'lukaszb/vim-web-indent'
-Bundle 'majutsushi/tagbar'
+Bundle 'jiangmiao/simple-javascript-indenter'
 
 filetype plugin indent on
 
@@ -45,29 +39,19 @@ if filereadable(expand('~/.vimrc_private'))
   source ~/.vimrc_private
 endif
 
-if filereadable('.vimrc.local')
-  source .vimrc.local
-endif
+"simple-javascript-indenter
+let g:localvimrc_ask=0
+
+let g:SimpleJsIndenter_BriefMode=1
 
 "syntastic
-let g:syntastic_javascript_checkers=['jshint', 'gjslint']
-let g:syntastic_javascript_gjslint_conf="--strict --nojsdoc --custom_jsdoc_tags='name,namespace,method,module,submodule,static,async,property,event'"
+let g:syntastic_javascript_checkers=['jshint']
 
 "quickrun
 let g:quickrun_config={'_': {'split': 'vsplit', 'hook/time/enable': '1'}}
 let g:quickrun_config['coffee'] = {'command' : 'coffee', 'exec' : ['%c -cbp %s']}
-
 set splitbelow
 set splitright
-
-map <C-w>] :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
-
-"Gtags
-map <C-j> :GtagsCursor<CR>
-map <C-i> :Gtags -f %<CR>
-map <C-n> :cn<CR>
-map <C-p> :cp<CR>
-map <C-k> <C-o>
 
 "neocomplcache
 let g:neocomplcache_enable_at_startup = 1
