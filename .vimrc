@@ -45,7 +45,10 @@ let g:localvimrc_ask=0
 let g:SimpleJsIndenter_BriefMode=1
 
 "syntastic
+let syntastic_mode_map = { 'passive_filetypes': ['html'] }
 let g:syntastic_javascript_checkers=['jshint']
+let g:syntastic_php_checkers=['php', 'phpcs', 'phpmd']
+let g:syntastic_php_phpcs_args='--report=csv --standard=PSR2'
 
 "quickrun
 let g:quickrun_config={'_': {'split': 'vsplit', 'hook/time/enable': '1'}}
