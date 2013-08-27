@@ -1,6 +1,5 @@
 {
     "predef": [
-        "$",
         "jasmine",
         "describe",
         "it",
@@ -9,6 +8,10 @@
         "waitsFor"
     ],
 
+    "globals": {
+        "$": false
+    },
+
     "quotmark": true,
     "unused": true,
     "undef": true,
@@ -16,7 +19,7 @@
     "trailing": true,
     "noarg": true,
 
-    "indent": 2,
+    "indent": 4,
     "maxlen": 80,
     "maxparams": 3,
     "maxdepth": 3,
