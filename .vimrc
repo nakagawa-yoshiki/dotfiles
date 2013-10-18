@@ -30,6 +30,7 @@ Bundle 'Shougo/vimproc'
 Bundle 'Shougo/neocomplcache'
 Bundle 'mattn/zencoding-vim'
 Bundle 'jiangmiao/simple-javascript-indenter'
+Bundle 'airblade/vim-gitgutter'
 
 filetype plugin indent on
 
