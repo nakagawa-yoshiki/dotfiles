@@ -9,6 +9,8 @@ set softtabstop=4
 set shiftwidth=4
 set autoindent
 set cursorline
+set modelines=5
+set modeline
 
 set ignorecase
 set hlsearch
@@ -23,7 +25,7 @@ filetype off
 set rtp+=~/.vim/vundle/
 call vundle#rc()
 
-Bundle 'embear/vim-localvimrc'
+Bundle 'thinca/vim-localrc'
 Bundle 'thinca/vim-quickrun'
 Bundle 'scrooloose/syntastic'
 Bundle 'Shougo/vimproc'
@@ -39,6 +41,9 @@ autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "norm
 if filereadable(expand('~/.vimrc_private'))
   source ~/.vimrc_private
 endif
+
+" vim-localrc
+let g:localrc_filename = '.lvimrc'
 
 "simple-javascript-indenter
 let g:localvimrc_ask=0
