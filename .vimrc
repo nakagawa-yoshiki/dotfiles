@@ -16,6 +16,8 @@ set ignorecase
 set hlsearch
 set smartcase
 set fileformats="unix,dos,mac"
+set ambiwidth=double
+
 
 au BufNewFile,BufRead *.ejs setf html
 
@@ -33,6 +35,7 @@ Bundle 'Shougo/neocomplcache'
 Bundle 'mattn/zencoding-vim'
 Bundle 'jiangmiao/simple-javascript-indenter'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'tsaleh/vim-align'
 
 filetype plugin indent on
 
@@ -51,10 +54,10 @@ let g:localvimrc_ask=0
 let g:SimpleJsIndenter_BriefMode=1
 
 "syntastic
-let syntastic_mode_map = { 'passive_filetypes': ['html'] }
+let syntastic_mode_map = { 'passive_filetypes': ['html', 'php'] }
 let g:syntastic_javascript_checkers=['jshint']
 let g:syntastic_php_checkers=['php', 'phpcs', 'phpmd']
-let g:syntastic_php_phpcs_args='--report=csv --standard=PSR2'
+"let g:syntastic_php_phpcs_args='--report=csv --standard=PSR2'
 
 "quickrun
 let g:quickrun_config={'_': {'split': 'vsplit', 'hook/time/enable': '1'}}
