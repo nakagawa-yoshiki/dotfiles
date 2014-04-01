@@ -7,6 +7,7 @@
   graph = log --graph --date-order -C -M -n 30 --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=iso
   type = cat-file -t
   dump = cat-file -p
+  word-diff = diff --word-diff=color --word-diff-regex='\\w+'
 [color]
   ui = true
 
