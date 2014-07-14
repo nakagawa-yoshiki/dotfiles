@@ -18,6 +18,9 @@ set smartcase
 set fileformats="unix,dos,mac"
 set ambiwidth=double
 
+hi Search ctermbg=lightgreen
+hi ColorColumn ctermbg=darkblue
+
 
 au BufNewFile,BufRead *.ejs setf html
 
@@ -32,7 +35,7 @@ Bundle 'thinca/vim-quickrun'
 Bundle 'scrooloose/syntastic'
 Bundle 'Shougo/vimproc'
 Bundle 'Shougo/neocomplcache'
-Bundle 'mattn/zencoding-vim'
+Bundle 'mattn/emmet-vim'
 Bundle 'jiangmiao/simple-javascript-indenter'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'tsaleh/vim-align'
