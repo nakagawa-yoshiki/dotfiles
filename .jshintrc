@@ -28,7 +28,6 @@
 
     "white": false,
     "node" : true,
-    "es5" : true,
     "browser" : true,
     "strict": false,
     "devel": true
