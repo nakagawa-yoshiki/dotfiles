@@ -25,22 +25,19 @@ hi ColorColumn ctermbg=darkblue
 au BufNewFile,BufRead *.ejs setf html
 
 
-"Vundle
-filetype off
-set rtp+=~/.vim/vundle/
-call vundle#rc()
-
-Bundle 'thinca/vim-localrc'
-Bundle 'thinca/vim-quickrun'
-Bundle 'scrooloose/syntastic'
-Bundle 'Shougo/vimproc'
-Bundle 'Shougo/neocomplcache'
-Bundle 'mattn/emmet-vim'
-Bundle 'jiangmiao/simple-javascript-indenter'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'tsaleh/vim-align'
-
-filetype plugin indent on
+"vim-plug
+call plug#begin('~/.vim/plugged')
+Plug 'thinca/vim-localrc'
+Plug 'thinca/vim-quickrun'
+Plug 'scrooloose/syntastic'
+Plug 'Shougo/vimproc'
+Plug 'Shougo/neocomplcache'
+Plug 'mattn/emmet-vim'
+Plug 'jiangmiao/simple-javascript-indenter'
+Plug 'airblade/vim-gitgutter'
+Plug 'tsaleh/vim-align'
+Plug 'editorconfig/editorconfig-vim'
+call plug#end()
 
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
 
