@@ -2,7 +2,7 @@
 
 DIR=$(cd $(dirname $0);pwd)
 
-for i in .screenrc .bash_profile .bashrc .vim .vimrc .gitconfig .git-completion.bash .jshintrc .gemrc .tmux.conf
+for i in .bash_profile .bashrc .vim .vimrc .gitconfig .gemrc .tmux.conf .screenrc
 do
   if [ ! -f "$HOME/$i" -a ! -d "$HOME/$i" ];then
     ln -s "$DIR/$i" "$HOME"

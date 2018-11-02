@@ -1,7 +1,5 @@
 set nocompatible
 
-syntax on
-
 set number
 set expandtab
 set tabstop=4
@@ -11,77 +9,37 @@ set autoindent
 set cursorline
 set modelines=5
 set modeline
-
 set ignorecase
 set hlsearch
 set smartcase
 set fileformats="unix,dos,mac"
 set ambiwidth=double
 
+syntax on
+
 hi Search ctermbg=lightgreen
 hi ColorColumn ctermbg=darkblue
 
-
-au BufNewFile,BufRead *.ejs setf html
-
-
-"vim-plug
-call plug#begin('~/.vim/plugged')
-Plug 'thinca/vim-localrc'
-Plug 'thinca/vim-quickrun'
-Plug 'scrooloose/syntastic'
-Plug 'Shougo/vimproc'
-Plug 'Shougo/neocomplcache'
-Plug 'mattn/emmet-vim'
-Plug 'jiangmiao/simple-javascript-indenter'
-Plug 'airblade/vim-gitgutter'
-Plug 'tsaleh/vim-align'
-Plug 'editorconfig/editorconfig-vim'
-call plug#end()
-
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
 
-if filereadable(expand('~/.vimrc_private'))
-  source ~/.vimrc_private
-endif
+"" plugins: .vim/pack/git-plugins/start/
+"ale
+"editorconfig-vim
+"emmet-vim
+"neocomplete.vim
+"vim-gitgutter
+"vim-quickrun
 
-" vim-localrc
-let g:localrc_filename = '.lvimrc'
+" ale
+let g:ale_fixers = {
+\   'javascript': ['eslint'],
+\}
 
-"simple-javascript-indenter
-let g:localvimrc_ask=0
-
-let g:SimpleJsIndenter_BriefMode=1
-
-"syntastic
-let syntastic_mode_map = { 'passive_filetypes': ['html', 'php'] }
-let g:syntastic_javascript_checkers=['jshint']
-let g:syntastic_php_checkers=['php', 'phpcs', 'phpmd']
-"let g:syntastic_php_phpcs_args='--report=csv --standard=PSR2'
+let g:neocomplete#enable_at_startup = 1
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 "quickrun
 let g:quickrun_config={'_': {'split': 'vsplit', 'hook/time/enable': '1'}}
 let g:quickrun_config['coffee'] = {'command' : 'coffee', 'exec' : ['%c -cbp %s']}
 set splitbelow
 set splitright
-
-"neocomplcache
-let g:neocomplcache_enable_at_startup = 1
-inoremap <expr><Up> pumvisible() ? neocomplcache#close_popup()."\<Up>" : "\<Up>"
-inoremap <expr><Down> pumvisible() ? neocomplcache#close_popup()."\<Down>" : "\<Down>"
-
-function InsertTabWrapper()
-    if pumvisible()
-        return "\<c-n>"
-    endif
-    let col = col('.') - 1
-    if !col || getline('.')[col - 1] !~ '\k\|<\|/'
-        return "\<tab>"
-    elseif exists('&omnifunc') && &omnifunc == ''
-        return "\<c-n>"
-    else
-        return "\<c-x>\<c-o>"
-    endif
-endfunction
-inoremap <tab> <c-r>=InsertTabWrapper()<cr>
-

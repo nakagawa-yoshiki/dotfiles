@@ -3,26 +3,20 @@
   ci = commit
   st = status
   br = branch
-  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-  graph = log --graph --date-order -C -M -n 30 --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=iso
-  type = cat-file -t
-  dump = cat-file -p
-  word-diff = diff --word-diff=color --word-diff-regex='\\w+'
+  graph = log --graph --tags --date-order -C -M -n 30 --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=iso
 [color]
   ui = true
-
 #[user]
-# name = myuser
-# email = myuser@localhost
-
+#  name = myuser
+#  email = myuser@localhost
 [core]
   excludesfile = ~/.gitignore
   editor = /usr/bin/vim
 [push]
-	default = simple
+  default = simple
 [pager]
-	log = diff-highlight | less
-	show = diff-highlight | less
-	diff = diff-highlight | less
+  log = diff-highlight | less
+  show = diff-highlight | less
+  diff = diff-highlight | less
 [diff]
-    compactionHeuristic = true
+  compactionHeuristic = true
